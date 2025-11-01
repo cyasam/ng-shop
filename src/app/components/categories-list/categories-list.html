@@ -1,0 +1,16 @@
+<div class="categories-page">
+  <div class="app-header">
+    <h2 class="app-title">Kategoriler</h2>
+  </div>
+
+  <div *ngIf="loading" class="loading-grid category-grid">
+    <div class="skeleton category-skel" *ngFor="let i of [].constructor(8)"></div>
+  </div>
+
+  <div *ngIf="!loading" class="category-grid">
+    <a [routerLink]="['/categories', cat]" class="category-card" *ngFor="let cat of categories">
+      <div class="emoji">🏷️</div>
+      <div class="title">{{ cat | titlecase }}</div>
+    </a>
+  </div>
+</div>

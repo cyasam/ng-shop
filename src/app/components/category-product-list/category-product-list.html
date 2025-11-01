@@ -1,0 +1,15 @@
+<div class="app-header">
+  <h2 class="app-title">Ürünler</h2>
+  <label class="search">
+    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M21 20.3L17.7 17a8 8 0 10-.7.7L20.3 21 21 20.3zM10.5 17a6.5 6.5 0 110-13 6.5 6.5 0 010 13z"
+      />
+    </svg>
+    <input placeholder="Ürün ara..." />
+  </label>
+  <button class="btn">Filtreler</button>
+</div>
+
+<app-product-list [loading]="loading" [products]="products"></app-product-list>

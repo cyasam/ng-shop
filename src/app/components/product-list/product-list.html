@@ -1,0 +1,25 @@
+<!-- loading -->
+<div *ngIf="loading" class="loading-grid products">
+  <div class="skeleton skel-card" *ngFor="let i of [].constructor(16)"></div>
+</div>
+
+<!-- products -->
+<div class="products" *ngIf="!loading">
+  <div class="product-card" *ngFor="let product of products">
+    <span class="badge">{{ product.category }}</span>
+
+    <div class="thumb">
+      <img [src]="product.image" [alt]="product.title" />
+    </div>
+
+    <h3>{{ product.title }}</h3>
+    <p class="desc">{{ product.description }}</p>
+
+    <div class="row">
+      <div class="price">{{ product.price | currency : 'TRY' : 'symbol' : '1.0-0' }}</div>
+      <div class="actions">
+        <button class="add-btn">Sepete Ekle</button>
+      </div>
+    </div>
+  </div>
+</div>
